@@ -36,8 +36,6 @@ const Stopwatch = ({ company, department, description }) => {
   // Method to reset timer back to 0
   const reset = () => {
     setTime(0);
-
-    console.log(total_time.toFixed(2))
   };
   return (
     <div className="stopwatch-container">
