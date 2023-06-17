@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "./stopwatch.css";
+import "./Stopwatch.css";
 
-const Stopwatch = () => {
+const Stopwatch = ({ company, department, description }) => {
   // state to store time
   const [time, setTime] = useState(0);
 
@@ -26,6 +26,8 @@ const Stopwatch = () => {
   // Seconds calculation
   const seconds = Math.floor(time % 60);
 
+  const total_time = hours + (1/(60/minutes)) + (1/(3600/seconds))
+
   // Method to start and stop timer
   const startAndStop = () => {
     setIsRunning(!isRunning);
@@ -34,6 +36,8 @@ const Stopwatch = () => {
   // Method to reset timer back to 0
   const reset = () => {
     setTime(0);
+
+    console.log(total_time.toFixed(2))
   };
   return (
     <div className="stopwatch-container">
