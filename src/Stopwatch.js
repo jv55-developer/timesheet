@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Stopwatch.css";
+import axios from 'axios';
 
 const Stopwatch = ({ company, department, description }) => {
   // state to store time
@@ -38,6 +39,18 @@ const Stopwatch = ({ company, department, description }) => {
     setTime(0);
 
     total_time = total_time.toFixed(2);
+
+    const timesheetData = {
+      company,
+      department,
+      description,
+      time: total_time
+    }
+
+    axios.post('http://localhost:3004/timesheet', timesheetData)
+      .then((res) => {
+        console.log(res.data)
+      });
   };
   return (
     <div className="stopwatch-container">
