@@ -87,8 +87,8 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <div className="col-md-3 col-10 timesheet-container py-5 px-2 my-2">
+    <div className="App my-5">
+      <div className="col-md-3 col-10 timesheet-container py-5 px-2">
         <h1 className="mx-auto text-white">TimeSheets</h1>
         <img src={logo} className="logo mx-auto" alt="logo" />
         <form>
@@ -127,10 +127,10 @@ function App() {
             {seconds.toString().padStart(2, "0")}
           </p>
           <div className="stopwatch-buttons">
-            <button className="stopwatch-button" onClick={startAndStop}>
+            <button className="btn btn-green btn-lg" onClick={startAndStop}>
               {isRunning ? "Stop" : "Start"}
             </button>
-            <button className="stopwatch-button" onClick={reset}>
+            <button className="btn btn-red btn-lg" onClick={reset}>
               Reset
             </button>
           </div>
